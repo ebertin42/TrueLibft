@@ -1,20 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 10:17:12 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/08 10:17:42 by ebertin          ###   ########.fr       */
+/*   Created: 2017/11/08 11:38:28 by ebertin           #+#    #+#             */
+/*   Updated: 2017/11/08 14:43:20 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+char	*ft_strstr(const char *str, const char *find)
 {
-	if ((c > 48 && c < 57) || (c > 65 && c < 90) || (c > 97 && c < 122))
-		return (1);
-	return (0);
+	int		i;
+	int		j;
+	int		k;
+	char	*s;
+	char	*f;
+
+	i = 0;
+	j = 0;
+	s = (char *)str;
+	f = (char *)find;
+	if (!f[i])
+		return (s);
+	while (s[i])
+	{
+		j = i;
+		k = 0;
+		while (s[j++] == f[k++])
+			if (!f[k])
+				return (&s[i]);
+		i++;
+	}
+	return (NULL);
 }

@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 10:17:12 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/08 10:17:42 by ebertin          ###   ########.fr       */
+/*   Created: 2017/11/08 11:14:59 by ebertin           #+#    #+#             */
+/*   Updated: 2017/11/08 11:24:37 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if ((c > 48 && c < 57) || (c > 65 && c < 90) || (c > 97 && c < 122))
-		return (1);
+	int		i;
+
+	i = 0;
+	while ((s1[i] || s2[i]) && i <= (int)n)
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
 	return (0);
 }

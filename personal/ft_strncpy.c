@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 10:17:12 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/08 10:17:42 by ebertin          ###   ########.fr       */
+/*   Created: 2017/11/08 13:57:32 by ebertin           #+#    #+#             */
+/*   Updated: 2017/11/08 14:41:54 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	if ((c > 48 && c < 57) || (c > 65 && c < 90) || (c > 97 && c < 122))
-		return (1);
-	return (0);
+	int i;
+
+	i = 0;
+	while (src[i] && i <= (int)n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	if (ft_strlen(src) < n)
+	{
+		while (dest[i] && i <= (int)n)
+		{
+			dest[i] = '\0';
+			i++;
+		}
+	}
+	return (dest);
 }
