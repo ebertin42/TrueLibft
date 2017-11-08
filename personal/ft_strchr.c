@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 16:02:09 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/08 16:02:13 by ebertin          ###   ########.fr       */
+/*   Created: 2017/11/08 16:29:53 by ebertin           #+#    #+#             */
+/*   Updated: 2017/11/08 17:10:06 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	while (n-- && *s1 == *s2)
+	char	*rtn;
+
+	rtn = NULL;
+	while (*s)
 	{
-		s1++;
-		s2++;
+		if (*s == (char)c)
+		{
+			rtn = (char*)s;
+			return (rtn);
+		}
+		s++;
 	}
-	return (*(char *)s1 - *(char *)s2);
+	return (rtn);
 }

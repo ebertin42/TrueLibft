@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strrchr.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 14:07:18 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/08 14:41:35 by ebertin          ###   ########.fr       */
+/*   Created: 2017/11/08 17:25:13 by ebertin           #+#    #+#             */
+/*   Updated: 2017/11/08 17:25:35 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strrchr(const char *s, int c)
+char	*ft_strnstr(const char *str, const char *find, size_t len)
 {
-	int		i;
-	char	*rtn;
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	char	*s;
+	char	*f;
 
 	i = 0;
-	while (s[i])
+	j = 0;
+	s = (char *)str;
+	f = (char *)find;
+	if (!f[i])
+		return (s);
+	while (s[i] && i < len)
 	{
-		if (s[i] == c)
-			rtn = (char)&c;
+		j = i;
+		k = 0;
+		while (s[j++] == f[k++])
+			if (!f[k])
+				return (&s[i]);
 		i++;
 	}
-	if (!(rtn))
-		rtn = NULL;
-	return (rtn);
+	return (NULL);
 }
