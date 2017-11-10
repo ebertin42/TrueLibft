@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 10:48:51 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/08 14:46:07 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/11/10 12:12:30 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <string.h>
+# include <unistd.h>
 
 typedef	struct		s_list
 {
@@ -37,5 +38,17 @@ char	*ft_strstr(const char *str, const char *find);
 char	*ft_strdup(const char *src);
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strncpy(char *dest, const char *src, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
+void	ft_putendl(char const *c);
+void	ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putendl_fd(char const *s, int fd);
 
 #endif
