@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 09:43:04 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/10 15:57:07 by ebertin          ###   ########.fr       */
+/*   Created: 2017/11/10 17:30:54 by ebertin           #+#    #+#             */
+/*   Updated: 2017/11/10 17:44:45 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strnew(size_t size)
 {
-	int i;
-	int neg;
-	int result;
+	unsigned char	*new;
+	int				i;
 
-	result = 0;
 	i = 0;
-	neg = 1;
-	while (str[i] == 32 || str[i] == '\t' || str[i] == '\v' || str[i] == '\f'
-		|| str[i] == '\r' || str[i] == '\n')
-		i++;
-	if (str[i] == '-')
+	new = malloc(sizeof(unsigned char) * size + 1);
+	if (!(new))
+		return (NULL);
+	while (new[i])
 	{
-		neg = -1;
+		new[i] = '\0';
 		i++;
 	}
-	while (str[i])
-	{
-		if (!(str[i] >= 48 && str[i] <= 57))
-			return (result * neg);
-		else
-			result = result * 10 + str[i] - 48;
-		i++;
-	}
-	return (result * neg);
+	return ((char*)new);
 }

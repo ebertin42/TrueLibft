@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 16:29:53 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/08 17:10:06 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/11/10 19:30:52 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@
 char	*ft_strchr(const char *s, int c)
 {
 	char	*rtn;
+	int		len;
+	int		i;
 
+	i = 0;
+	len = ft_strlen(s);
 	rtn = NULL;
-	while (*s)
+	while (i <= len)
 	{
 		if (*s == (char)c)
 		{
@@ -26,6 +30,7 @@ char	*ft_strchr(const char *s, int c)
 			return (rtn);
 		}
 		s++;
+		i++;
 	}
 	return (rtn);
 }
