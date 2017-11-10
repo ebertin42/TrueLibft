@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 16:42:19 by anonymou          #+#    #+#             */
-/*   Updated: 2017/11/10 10:10:43 by ebertin          ###   ########.fr       */
+/*   Created: 2017/11/10 11:42:02 by ebertin           #+#    #+#             */
+/*   Updated: 2017/11/10 11:43:17 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		((char*)dest)[i] = ((char*)src)[i];
-		i++;
-	}
-	return (dest);
+	write(fd, &c, 1);
 }

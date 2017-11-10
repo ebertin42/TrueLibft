@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 16:42:19 by anonymou          #+#    #+#             */
-/*   Updated: 2017/11/10 10:10:43 by ebertin          ###   ########.fr       */
+/*   Created: 2017/11/10 10:56:14 by ebertin           #+#    #+#             */
+/*   Updated: 2017/11/10 11:02:21 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
+	char	*tmp;
 
 	i = 0;
 	while (i < n)
 	{
-		((char*)dest)[i] = ((char*)src)[i];
+		tmp[i] = ((char*)src)[i];
+		((char*)dest)[i] = tmp[i];
 		i++;
 	}
 	return (dest);
