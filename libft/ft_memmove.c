@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 10:56:14 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/10 18:39:26 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/11/12 14:30:32 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,9 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*src1;
-	char	*dst1;
-	size_t	i;
+	char temp[len][len];
 
-	i = 0;
-	src1 = (char *)src;
-	dst1 = (char *)dst;
-	while (i < len)
-	{
-		dst1[i] = src1[i];
-		i++;
-	}
+	ft_memcpy(temp, src, len);
+	ft_memcpy(dst, temp, len);
 	return (dst);
 }

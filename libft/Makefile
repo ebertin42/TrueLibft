@@ -6,7 +6,7 @@
 #    By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/10 12:17:53 by ebertin           #+#    #+#              #
-#    Updated: 2017/11/12 12:54:12 by ebertin          ###   ########.fr        #
+#    Updated: 2017/11/12 15:04:12 by ebertin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC = ft_putchar.c ft_strcmp.c ft_isdigit.c ft_isprint.c \
  ft_isnegativ.c ft_memmove.c ft_strsplit.c ft_strtrim.c ft_strdel.c \
  ft_memdel.c ft_memalloc.c ft_strclr.c ft_striteri.c ft_striter.c ft_strmap.c \
  ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strcat.c ft_strncat.c \
- ft_strlcat.c
+ ft_strlcat.c ft_strjoin.c ft_memchr.c ft_memcmp.c
 FLAGS = -Wall -Wextra -Werror -c
 HEADERS = libft.h
 OBJ = ft_putchar.o ft_strcmp.o ft_isdigit.o ft_isprint.o \
@@ -34,7 +34,7 @@ OBJ = ft_putchar.o ft_strcmp.o ft_isdigit.o ft_isprint.o \
  ft_isnegativ.o ft_memmove.o ft_strsplit.o ft_strtrim.o ft_strdel.o \
  ft_memdel.o ft_memalloc.o ft_strclr.o ft_striteri.o ft_striter.o ft_strmap.o \
  ft_strmapi.o ft_strequ.o ft_strnequ.o ft_strsub.o ft_strcat.o ft_strncat.o \
- ft_strlcat.o
+ ft_strlcat.o ft_strjoin.o ft_memchr.o ft_memcmp.o
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 11:25:34 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/10 12:13:02 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/11/12 15:19:49 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl(char const *c)
 {
+	if (!(c))
+		return ;
 	ft_putstr(c);
 	ft_putchar('\n');
 }

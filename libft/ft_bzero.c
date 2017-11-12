@@ -6,7 +6,7 @@
 /*   By: anonymou <anonymou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 16:18:15 by anonymou          #+#    #+#             */
-/*   Updated: 2017/11/10 10:16:18 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/11/12 14:35:38 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	int		i;
 
 	i = 0;
-	while (i <= (int)n)
+	while (i < (int)n)
 	{
 		((char *)s)[i] = '\0';
 		i++;

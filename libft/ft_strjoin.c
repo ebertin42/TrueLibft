@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/11 20:48:19 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/11 20:48:30 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/11/12 13:19:46 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
+	char	*rtn;
 	int		len;
 
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc(sizeof(*str) * (len + 1));
-	if (str == NULL)
+	if (!(s1 && s2))
 		return (NULL);
-	ft_strcpy(str, s1);
-	ft_strcat(str, s2);
-	return (str);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	rtn = (char *)malloc(sizeof(*rtn) * (len + 1));
+	if (rtn == NULL)
+		return (NULL);
+	ft_strcpy(rtn, s1);
+	ft_strcat(rtn, s2);
+	return (rtn);
 }

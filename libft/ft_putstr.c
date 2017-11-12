@@ -6,7 +6,7 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 11:20:57 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/10 11:24:31 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/11/12 15:15:59 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr(char const *s)
 	int i;
 
 	i = 0;
+	if (!(s))
+		return ;
 	while (s[i])
 	{
 		ft_putchar(s[i]);

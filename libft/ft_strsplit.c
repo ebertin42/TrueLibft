@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 20:01:48 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/11 12:57:30 by ebertin          ###   ########.fr       */
+/*   Created: 2017/11/12 15:34:34 by ebertin           #+#    #+#             */
+/*   Updated: 2017/11/12 15:52:15 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	static	remplir(char const *s, char **tab, int *tab1, char c)
+static int		remplir(char const *s, char **tab, int *tab1, char c)
 {
-	int	j;
-	int	x;
+	int j;
+	int x;
 
 	j = 0;
 	x = tab1[0];
@@ -33,17 +33,17 @@ int	static	remplir(char const *s, char **tab, int *tab1, char c)
 	return (tab1[0]);
 }
 
-int	static	detectword(char const *s, int i, char c)
+static int		detectword(char const *s, int i, char c)
 {
 	while (s[i] == c)
 		i++;
 	return (i);
 }
 
-int	static	countwords(char const *s, char c)
+static int		countwords(char const *s, char c)
 {
-	int	word;
-	int	i;
+	int word;
+	int i;
 
 	i = 0;
 	word = 0;
@@ -59,7 +59,7 @@ int	static	countwords(char const *s, char c)
 	return (word);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	int		word;
