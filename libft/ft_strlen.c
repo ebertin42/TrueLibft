@@ -6,11 +6,10 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:31:36 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/08 09:31:43 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/11/11 17:29:31 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 size_t	ft_strlen(const char *str)

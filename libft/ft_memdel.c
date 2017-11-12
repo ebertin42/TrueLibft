@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:48:22 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/11 18:45:11 by ebertin          ###   ########.fr       */
+/*   Created: 2017/11/11 14:47:41 by ebertin           #+#    #+#             */
+/*   Updated: 2017/11/11 14:49:34 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+void	ft_memdel(void **ap)
 {
-	int i;
-
-	i = 0;
-	while (src[i])
+	if (ap != NULL)
 	{
-		dest[i] = src[i];
-		i++;
+		free(*ap);
+		*ap = NULL;
 	}
-	dest[i] = '\0';
-	return (dest);
 }

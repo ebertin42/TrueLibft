@@ -6,13 +6,13 @@
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 20:01:48 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/10 20:42:18 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/11/11 12:57:30 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		remplir(char const *s, char **tab, int *tab1, char c)
+int	static	remplir(char const *s, char **tab, int *tab1, char c)
 {
 	int	j;
 	int	x;
@@ -33,54 +33,54 @@ int		remplir(char const *s, char **tab, int *tab1, char c)
 	return (tab1[0]);
 }
 
-int		detectword(char const *s, int i, char c)
+int	static	detectword(char const *s, int i, char c)
 {
 	while (s[i] == c)
 		i++;
 	return (i);
 }
 
-int		countwords(char const *s, char c)
+int	static	countwords(char const *s, char c)
 {
-    int word;
-    int i;
+	int	word;
+	int	i;
 
-    i = 0;
-    word = 0;
-    while (s[i])
-    {
-        while (s[i] == c)
-            i++;
-        if (s[i])
-            word++;
-        while (s[i] != c && s[i])
-            i++;
-    }
-    return (word);
+	i = 0;
+	word = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i])
+			word++;
+		while (s[i] != c && s[i])
+			i++;
+	}
+	return (word);
 }
 
-char    **ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
-    char **tab;
-    int word;
-    int tab1[2];
+	char	**tab;
+	int		word;
+	int		tab1[2];
 
-    if(s)
-    {
-        tab1[0] = 0;
-        tab1[1] = 0;
-        word = countwords(s, c);
-        if(!(tab = (char **)malloc(sizeof(char *) * word + 1)))
-            return (NULL);
-        while(s[tab1[0]] && tab1[1] < word)
-        {
-            tab1[0] = detectword(s, tab1[0], c);
-            if (!(tab1[0] = remplir(s, tab, tab1, c)))
-                return(NULL);
-            tab1[1] += 1;
-        }
-        tab[tab1[1]] = NULL;
-        return (tab);
-    }
-    return (NULL);
+	if (s)
+	{
+		tab1[0] = 0;
+		tab1[1] = 0;
+		word = countwords(s, c);
+		if (!(tab = (char **)malloc(sizeof(char *) * word + 1)))
+			return (NULL);
+		while (s[tab1[0]] && tab1[1] < word)
+		{
+			tab1[0] = detectword(s, tab1[0], c);
+			if (!(tab1[0] = remplir(s, tab, tab1, c)))
+				return (NULL);
+			tab1[1] += 1;
+		}
+		tab[tab1[1]] = NULL;
+		return (tab);
+	}
+	return (NULL);
 }

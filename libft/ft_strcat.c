@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebertin <ebertin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:48:22 by ebertin           #+#    #+#             */
-/*   Updated: 2017/11/11 18:45:11 by ebertin          ###   ########.fr       */
+/*   Created: 2017/11/12 11:49:44 by ebertin           #+#    #+#             */
+/*   Updated: 2017/11/12 12:11:00 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
-	int i;
+	int	i;
+	int	j;
 
 	i = 0;
-	while (src[i])
+	j = 0;
+	while (dest[i])
+		i++;
+	while (src[j])
 	{
-		dest[i] = src[i];
+		dest[i] = src[j];
+		j++;
 		i++;
 	}
 	dest[i] = '\0';
